@@ -35,7 +35,6 @@ WorldGen.PlaceTile.hook((original, i, j, Type, mute, force, plr, stly) => {
 WorldGen.KillTile_DropItems.hook((original, x, y, tileCache, includeLargeObjectDrops) => {
   original(x, y, tileCache, false);
 
-  // Verificando se o tile é um minério
   if (TileID.Sets.Ore[tileCache.type]) {
     for (let i = 1; i < fortune; i++) {
       original(x, y, tileCache, false);
