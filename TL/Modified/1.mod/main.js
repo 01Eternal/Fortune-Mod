@@ -17,9 +17,8 @@ ChatCommandProcessor.ProcessIncomingMessage.hook(
     (original, self, message, client_id) => {
         original(self, message, client_id);
 
-        const command = message.Text;
-
-        if (command.startsWith("/fortune ")) {
+        const command = message.Text.toUpperCase();
+        if (command.startsWith("/FORTUNE")) {
             const fortuneValue = parseInt(command.split(" ")[1]);
             if (!isNaN(fortuneValue)) {
                 fortune = fortuneValue;
